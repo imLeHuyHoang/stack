@@ -15,8 +15,8 @@ func TestStack(t *testing.T) {
 	s.Push(30)
 
 	// Test method Size
-	if s.Size() != 3 {
-		t.Fatalf("Expected stack size to be 3, got %d", s.Size())
+	if s.Len() != 3 {
+		t.Fatalf("Expected stack Len to be 3, got %d", s.Len())
 	}
 
 	// Test method Peek
@@ -30,11 +30,11 @@ func TestStack(t *testing.T) {
 	if !ok || value != 30 {
 		t.Fatalf("Expected popped element to be 30, got %d", value)
 	}
-	if s.Size() != 2 {
-		t.Fatalf("Expected stack size to be 2 after pop, got %d", s.Size())
+	if s.Len() != 2 {
+		t.Fatalf("Expected stack Len() to be 2 after pop, got %d", s.Len())
 	}
 
-	for s.Size() > 0 {
+	for s.Len() > 0 {
 		s.Pop()
 	}
 	if s.IsEmpty() != true {
