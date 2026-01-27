@@ -231,6 +231,11 @@ s.Clear()
 ⚠️ **Note**: This stack implementation is **not thread-safe**. If you need to use it in concurrent scenarios, you should protect it with a mutex:
 
 ```go
+import (
+    "sync"
+    "github.com/imLeHuyHoang/stack"
+)
+
 type SafeStack[T any] struct {
     stack *stack.Stack[T]
     mu    sync.Mutex
