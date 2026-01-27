@@ -217,12 +217,14 @@ s.Clear()
 
 | Operation | Time Complexity | Space Complexity |
 |-----------|----------------|------------------|
-| Push      | O(1) amortized | O(1)            |
+| Push      | O(1) amortized* | O(1)            |
 | Pop       | O(1)           | O(1)            |
 | Peek      | O(1)           | O(1)            |
 | Size      | O(1)           | O(1)            |
 | IsEmpty   | O(1)           | O(1)            |
 | Clear     | O(1)           | O(1)            |
+
+\* **Note on Push complexity**: Push operations are O(1) amortized. While most push operations are constant time, occasional slice reallocations may require O(n) time when the underlying array grows. However, due to Go's doubling strategy for slice growth, the amortized cost remains O(1).
 
 ## Thread Safety
 
